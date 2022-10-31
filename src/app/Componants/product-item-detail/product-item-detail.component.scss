@@ -1,0 +1,36 @@
+img {
+    border-radius: 10px;
+    width: 220px;
+    margin-right: 130px;
+    
+  }
+  
+  .select-input {
+    display: block;
+    width: 108px; 
+    margin-bottom: 15px;
+    margin-top: 15px;
+  }
+  
+  .detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 64px;
+  }
+  
+  .detail-item {
+    
+    display: inline-block; 
+    justify-content: center;
+    align-items: center;
+    
+ }
+  
+  .back-link {
+    margin-top: 8px;
+  }
+  button,a{
+    display: block;
+    margin-top: 15px;
+  }

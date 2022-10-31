@@ -1,0 +1,10 @@
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid" style="justify-content:center">
+    <a class="navbar-brand" href="#">My Store</a>
+  </div>
+  <div class="container-fluid" style="justify-content:center">
+    <a  [routerLink]="['/products']" >Products</a>
+    
+    <a  [routerLink]="['/cart']" *ngIf="isEmptycart">| My Cart <i class='fa fa-shopping-cart' aria-hidden="true"></i></a>
+  </div>
+</nav>

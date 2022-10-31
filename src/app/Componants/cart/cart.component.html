@@ -1,0 +1,21 @@
+<div class="cart">
+
+    <div class="cart__item">
+        <div class="cart-item" *ngFor="let prd of products">
+            
+            <img [src]="prd.url" alt="">
+      <div class="cart-panel">
+
+            <h5 class="cart-detail">{{prd.name}}</h5>
+            <h5 class="cart-detail">{{prd.price | currency}}</h5>
+            Amount<input #inpMount class="cart-detail"  (change)="price(inpMount.value)" type="number" name="numofcat" min="1" value="{{prd.amount}}">   
+          </div>
+        </div>
+        <h2 *ngIf="products.length != 0" class="cart-detail">Total: {{totalPrice | currency}}</h2>
+    </div> 
+
+    <div class="cart-item">
+        <app-user-info *ngIf="products.length != 0" (userInfo)="onSubmit($event)"></app-user-info>
+    </div>
+</div>
+
