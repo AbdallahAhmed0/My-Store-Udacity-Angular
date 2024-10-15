@@ -1,8 +1,4 @@
-  <div class="card-container">
-    <!-- Bootstrap alert for showing the message -->
-    <div *ngIf="showMessage" class="alert alert-success mt-3 mx-auto" role="alert" style="width: 50%;">
-      {{ messageText }}
-    </div>
+<div class="card-container">
   <div class="card">
     <div class="image-container">
       <img class="image" [src]="prd.url" (click)="prdItem(prd.id)" alt="{{prd.name}}">
@@ -15,4 +11,22 @@
     </div>
   </div>
   </div>
+  <!-- Success Confirmation Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-confirm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="icon-box">
+					<i class="material-icons">&#xE876;</i>
+				</div>				
+				<h4 class="modal-title w-100">Success</h4>	
+			</div>
+			<div class="modal-body">
+				<p class="text-center ">You Added <b>{{quantity}}</b> of <b>{{prd.name}}</b> in cart</p>
+			</div>
+      <button class="btn btn-success btn-block" data-dismiss="modal">Open Cart</button>
+		</div>
+	</div>
+</div>
+
   
