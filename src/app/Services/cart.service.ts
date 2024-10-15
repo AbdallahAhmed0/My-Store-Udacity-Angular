@@ -21,7 +21,6 @@ export class CartService {
     this.prd.push(product);
     this.countOfPrd.push(count);
     this.isEmpty.next(true);
-    alert('Added Sucessfully');
   }
 
   getItems() {

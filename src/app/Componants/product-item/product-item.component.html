@@ -1,4 +1,8 @@
-<div class="card-container">
+  <div class="card-container">
+    <!-- Bootstrap alert for showing the message -->
+    <div *ngIf="showMessage" class="alert alert-success mt-3 mx-auto" role="alert" style="width: 50%;">
+      {{ messageText }}
+    </div>
   <div class="card">
     <div class="image-container">
       <img class="image" [src]="prd.url" (click)="prdItem(prd.id)" alt="{{prd.name}}">
@@ -10,4 +14,5 @@
       <button type="button" (click)="addToCart(prd, inpMount.value)" class="btn btn-primary">Add to cart</button>
     </div>
   </div>
-</div>
+  </div>
+  
