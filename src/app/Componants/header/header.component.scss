@@ -1,15 +1,41 @@
 .header {
   text-align: center;
-  background: #33B5E5;
+  background: #33B5E5; 
   color: #fff;
   padding: 12px;
 }
 
-a {
-  color: #ffffff;
+.navbar {
+  padding: 1rem; 
 }
 
-i{
-  font-size: 20px;
+.navbar-brand {
+  font-size: 1.5rem; /* Increase font size for the brand name */
+  font-weight: bold; /* Make the brand name bold */
+}
+
+.nav-link {
+  color: #ffffff; /* Set the link color */
+  margin: 0px 20px; /* Add spacing between links */
+  transition: color 0.3s; /* Add transition for hover effect */
+}
+
+.nav-link:hover { 
+  transform: scale(1.2);
+  opacity: 0.85;
+  cursor: pointer;
+
+}
+
+i {
+  font-size: 20px; /* Keep icon size */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 576px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack links vertically on smaller screens */
+    margin-top: 10px; /* Add margin for spacing */
+  }
 }
 
