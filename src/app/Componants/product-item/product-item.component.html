@@ -1,11 +1,13 @@
-<div class="card" style="width: 16rem;">
-    <div class="card" style="width: 16rem;">
-      <img   class="hover-image" [src]="prd.url" (click)="prdItem(prd.id)" alt="">
+<div class="card-container">
+  <div class="card">
+    <div class="image-container">
+      <img class="image" [src]="prd.url" (click)="prdItem(prd.id)" alt="{{prd.name}}">
     </div>
-      <div class="card-body">
-        <h5 class="card-title">{{prd.name}}</h5>
-        <h5 class="card-title">{{prd.price | currency}}</h5>
-        <input type="number" name="numofcat" #inpMount min="1" [defaultValue]="1">
-        <button type="button" (click)="addToCart(prd,inpMount.value)" class="btn btn-primary">Add to cart</button> 
-      </div>
+    <div class="card-body">
+      <h5 class="card-title">{{prd.name}}</h5>
+      <h5 class="card-price">{{prd.price | currency}}</h5>
+      <input type="number" name="numofcat" #inpMount min="1" [defaultValue]="1">
+      <button type="button" (click)="addToCart(prd, inpMount.value)" class="btn btn-primary">Add to cart</button>
     </div>
+  </div>
+</div>

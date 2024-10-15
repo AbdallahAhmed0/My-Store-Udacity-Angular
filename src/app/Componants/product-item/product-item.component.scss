@@ -1,13 +1,81 @@
-  
-  .card-body{
-    text-align: center;
+.card-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
 
-    input{
-        margin: 10px;
-        width: 50%;
+.card {
+  width: 17rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  text-align: center;
+  
+  
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+  cursor: pointer;
+}
+
+.card-body {
+  padding: 15px;
+  
+  h5.card-title {
+    font-size: 1.25rem;
+    margin: 10px 0;
+  }
+  
+  h5.card-price {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  input[type="number"] {
+    margin: 10px 0;
+    width: 60%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+  }
+  input[type="number"]:focus {
+    outline: none; 
+    border: 2px solid #007bff; 
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+  button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
     }
   }
-  img{
-
-    cursor: pointer;
-  }
+}
