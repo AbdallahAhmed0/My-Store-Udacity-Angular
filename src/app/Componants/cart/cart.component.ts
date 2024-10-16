@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
   
-  products:Products[]=[];
+  products!:Products[];
   totalPrice!:number;
   @Output() userInfo = new EventEmitter();
 
@@ -23,10 +23,8 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
 
-this.products =this.cartSer.getItems();
-
-
-  }
+    this.products =this.cartSer.getItems();
+}
 
   price(count:string){
     this.totalPrice=0;

@@ -1,4 +1,4 @@
-<div class="cart">
+<div class="cart" *ngIf="products">
 
     <div class="cart__item">
         <div class="cart-item" *ngFor="let prd of products">
@@ -11,11 +11,14 @@
             Amount<input #inpMount class="cart-detail"  (change)="price(inpMount.value)" type="number" name="numofcat" min="1" value="{{prd.amount}}">   
           </div>
         </div>
-        <h2 *ngIf="products.length != 0" class="cart-detail">Total: {{totalPrice | currency}}</h2>
+        <h2 *ngIf="products.length" class="cart-detail">Total: {{totalPrice | currency}}</h2>
     </div> 
 
     <div class="cart-item">
-        <app-user-info *ngIf="products.length != 0" (userInfo)="onSubmit($event)"></app-user-info>
+        <app-user-info *ngIf="products.length" (userInfo)="onSubmit($event)"></app-user-info>
     </div>
+</div>
+<div class="empty-Page m-auto justify-content-center alert alert-warning" *ngIf="!products.length">
+    <h1 class="mt-5">Cart is Empty</h1>
 </div>
 
