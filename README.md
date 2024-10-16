@@ -48,6 +48,6 @@ The application will run on http://localhost:4200/.
 
  ## ScreenShots
 
-![ScreenShot](screenshots/ProductList.PNG)
-![ScreenShot](screenshots/Cart.PNG)
-![ScreenShot](screenshots/Success.png)
+![ScreenShot](screenshots/productlist.png)
+![ScreenShot](screenshots/cart.PNGpng)
+![ScreenShot](screenshots/success.png)
