@@ -4,6 +4,7 @@ import { Products } from 'src/app/Models/products';
 import { CartService } from 'src/app/Services/cart.service';
 import { ProductsService } from 'src/app/Services/products.service';
 import { Subscription } from 'rxjs';
+import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-product-item-detail',
@@ -14,6 +15,7 @@ export class ProductItemDetailComponent implements OnInit,OnDestroy {
 
   currPrdId:number= 0;
   product!:Products;
+  quantity:number = 1;  
 
   prds:Products[]=[];
   @Output()prdCart:EventEmitter<Products[]>;
@@ -48,9 +50,19 @@ export class ProductItemDetailComponent implements OnInit,OnDestroy {
   }
   
   addToCart(prd:Products,count:string){
+    this.quantity = +count;  
     prd.amount=count;
     this.cartSer.addToCart(prd,+count);
-  }
+          // Show the success modal
+          const modalElement = document.getElementById('successModal') as HTMLElement;
+          if (modalElement) {
+            const modal = new bootstrap.Modal(modalElement);
+            modal.show();
+          } else {
+            console.error('Modal element not found');
+          }
+        }
+    
 
   ngOnDestroy(): void {
 

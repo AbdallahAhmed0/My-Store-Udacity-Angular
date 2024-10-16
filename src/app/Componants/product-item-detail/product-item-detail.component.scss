@@ -1,36 +1,156 @@
-img {
-    border-radius: 10px;
-    width: 220px;
-    margin-right: 130px;
-    
-  }
-  
-  .select-input {
-    display: block;
-    width: 108px; 
-    margin-bottom: 15px;
-    margin-top: 15px;
-  }
-  
+/* Container for both the image and details */
+.detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align items at the top */
+  flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+  margin-top: 7%;
+  padding: 20px;
+  gap: 60px; /* Add space between image and details */
+}
+
+/* Styling for product image */
+.product-img {
+  max-width: 100%; /* Make the image responsive */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 10px;
+  width: 200px; /* Set an initial size */
+}
+
+/* Styling for product details */
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px; /* Limit the width of the text */
+  text-align: left;
+}
+
+input[type="number"] {
+  width: 60%;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.btn-cart {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  width: 60%;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cart:hover {
+  background-color: #0056b3;
+}
+
+/* Link back to products */
+a {
+  margin-top: 15px;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
   .detail-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 64px;
+      flex-direction: column;
+      align-items: center;
   }
-  
+
+  .product-img {
+      width: 70%; /* Adjust image size on small screens */
+  }
+
   .detail-item {
-    
-    display: inline-block; 
-    justify-content: center;
-    align-items: center;
-    
- }
-  
-  .back-link {
-    margin-top: 8px;
+      max-width: 90%; /* Make the text container fit better on small screens */
+      text-align: center; /* Center text for mobile */
   }
-  button,a{
-    display: block;
+  .btn-cart,input[type="number"]{
+    margin: auto;
     margin-top: 15px;
   }
+}
+// CSS Of Model
+.modal-confirm {		
+	color: #636363;
+	width: 325px;
+	font-size: 16px;
+  margin: auto;
+}
+.modal-confirm .modal-content {
+	padding: 20px;
+	border-radius: 5px;
+	border: none;
+}
+.modal-confirm .modal-header {
+	border-bottom: none;   
+	position: relative;
+}
+.modal-confirm h4 {
+	text-align: center;
+	font-size: 26px;
+	margin: 30px 0 -15px;
+}
+.modal-confirm .form-control, .modal-confirm .btn {
+	min-height: 40px;
+	border-radius: 3px; 
+}
+
+.modal-confirm .modal-footer {
+	border: none;
+	text-align: center;
+	border-radius: 5px;
+	font-size: 13px;
+}	
+.modal-confirm .icon-box {
+	color: #fff;		
+	position: absolute;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	top: -70px;
+	width: 95px;
+	height: 95px;
+	border-radius: 50%;
+	z-index: 9;
+	background: #82ce34;
+	padding: 15px;
+	text-align: center;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.modal-confirm .icon-box i {
+	font-size: 58px;
+	position: relative;
+	top: 3px;
+}
+.modal-confirm.modal-dialog {
+	margin-top: 80px;
+}
+.modal-confirm .btn {
+	color: #fff;
+	border-radius: 4px;
+	background: #82ce34;
+	text-decoration: none;
+	transition: all 0.4s;
+	line-height: normal;
+	border: none;
+}
+.modal-confirm .btn:hover, .modal-confirm .btn:focus {
+	background: #6fb32b;
+	outline: none;
+}
+

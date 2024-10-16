@@ -21,7 +21,6 @@ export class CartService {
     this.prd.push(product);
     this.countOfPrd.push(count);
     this.isEmpty.next(true);
-    alert('Added Sucessfully');
   }
 
   getItems() {
@@ -39,6 +38,10 @@ get isEmptyCart(){
     i++;
   }
   return this.totalPrice;
+}
+updateCart(products: Products[]) {
+  // Logic to update the cart in localStorage or wherever you store the cart data
+  localStorage.setItem('cart', JSON.stringify(products));
 }
 
   

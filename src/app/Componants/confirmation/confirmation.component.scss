@@ -2,21 +2,121 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 8%;
+    width: 60%;
+    margin: 5% auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.6s ease-out;
+
     &-items {
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: center;
+
         i {
             color: #33e5bc;
+            font-size: 50px;
+            margin-bottom: 20px;
+            animation: pulse 1s infinite;
         }
+
         .confirmation-title {
             color: #33e5bc;
-            font-size: 35px;
+            font-size: 40px;
             font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .confirmation-item {
+            margin-bottom: 20px;
+            font-size: 18px;
+            color: #444;
+            b {
+                color: #33e5bc;
+                font-weight: bold;
+            }
+        }
+
+        .return-link {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: #0056b3;
+            }
+        }
+    }
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .confirmation{
+        width: 80%;
+    }
+    .confirmation-items {
+        padding: 20px;
+        .confirmation-title {
+            font-size: 28px;
         }
         .confirmation-item {
-            margin-bottom: 30px;
+            font-size: 16px;
         }
+    }
+
+    .return-link {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .confirmation{
+        width: 100%;
+    }
+    .confirmation-items {
+        padding: 15px;
+        .confirmation-title {
+            font-size: 24px;
+        }
+        .confirmation-item {
+            font-size: 14px;
+        }
+    }
+
+    .return-link {
+        padding: 6px 12px;
+        font-size: 12px;
     }
 }

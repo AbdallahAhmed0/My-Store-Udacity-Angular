@@ -1,15 +1,32 @@
 <div class="detail-container" *ngIf="product">
+    <img class="product-img" [src]="product.url" alt="{{product.name}}">
 
-        <div class="img">
-            <img [src]="product.url" alt="">
-        </div>
-        <div class="detail-item">
-
-            <h2>{{product.name}}</h2>
-            <h3>{{product.price|currency}}</h3>
-            <p>{{product.description}}</p>
-        <input class="select-input" #inpMount type="number" name="numofcat" min="1" [defaultValue]="1">
-        <button type="button" (click)="addToCart(product,inpMount.value)" class="btn btn-primary">Add to cart</button>
-        <a  [routerLink]="['/products']" >Back to Products</a>
+    <div class="detail-item">
+        <h3>{{product.name}}</h3>
+        <h5>{{product.price | currency}}</h5>
+        <p>{{product.description}}</p>
+        <input class="form-control mt-2" #inpMount type="number" name="numofcat" min="1" [value]="1">
+        <button type="button" class="btn-cart" (click)="addToCart(product, inpMount.value)">Add to cart</button>
+        <a class="mt-4" [routerLink]="['/products']">Back to Products</a>
     </div>
 </div>
+  <!-- Success Confirmation Modal -->
+  <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-confirm">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <div class="icon-box">
+                      <i class="material-icons">&#xE876;</i>
+                  </div>				
+                  <h4 class="modal-title w-100">Success</h4>	
+              </div>
+              <div class="modal-body">
+                  <p class="text-center ">You Added <b>{{quantity}}</b> of <b>{{product.name}}</b> in cart</p>
+              </div>
+        <button [routerLink]="['/cart']" class="btn btn-success btn-block" data-bs-dismiss="modal">Open Cart</button>
+          </div>
+      </div>
+  </div>
+  
+    
+  

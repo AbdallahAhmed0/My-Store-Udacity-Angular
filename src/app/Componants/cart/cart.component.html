@@ -1,21 +1,25 @@
-<div class="cart">
-
+<div class="cart" *ngIf="products.length">
     <div class="cart__item">
         <div class="cart-item" *ngFor="let prd of products">
-            
             <img [src]="prd.url" alt="">
-      <div class="cart-panel">
-
-            <h5 class="cart-detail">{{prd.name}}</h5>
-            <h5 class="cart-detail">{{prd.price | currency}}</h5>
-            Amount<input #inpMount class="cart-detail"  (change)="price(inpMount.value)" type="number" name="numofcat" min="1" value="{{prd.amount}}">   
-          </div>
+            <div class="cart-panel">
+                <h5 class="cart-detail">{{prd.name}}</h5>
+                <h5 class="cart-detail">{{prd.price | currency}}</h5>
+                <label for="amount">Amount</label>
+                <input id="amount" #inpMount class="number-input form-control" (change)="price(inpMount.value)" type="number" min="1" value="{{prd.amount}}">
+                <button class="btn btn-outline-danger delete-btn" (click)="deleteProduct(prd)">
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                </button>
+            </div>
         </div>
-        <h2 *ngIf="products.length != 0" class="cart-detail">Total: {{totalPrice | currency}}</h2>
+        <h2 *ngIf="products.length" class="cart-detail total">Total: {{totalPrice | currency}}</h2>
     </div> 
 
     <div class="cart-item">
-        <app-user-info *ngIf="products.length != 0" (userInfo)="onSubmit($event)"></app-user-info>
+        <app-user-info *ngIf="products.length" (userInfo)="onSubmit($event)"></app-user-info>
     </div>
 </div>
 
+<div class="empty-page alert alert-warning" *ngIf="!products.length">
+    <h1 class="mt-5">Cart is Empty</h1>
+</div>
