@@ -82,6 +82,9 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .confirmation{
+        width: 80%;
+    }
     .confirmation-items {
         padding: 20px;
         .confirmation-title {
@@ -99,6 +102,9 @@
 }
 
 @media (max-width: 480px) {
+    .confirmation{
+        width: 100%;
+    }
     .confirmation-items {
         padding: 15px;
         .confirmation-title {
