@@ -12,19 +12,6 @@ This is a simple e-commerce application built using **Angular**. Users can brows
 - Order confirmation page
 - Responsive design
 
-## Install dependencies:
-Make sure you have **Node.js** and **npm** installed. Then, run:
-
-    ```bash
-    npm install
-
-## Run the application
-
-After installation, run the development server using the **Angular CLI**:
-
-    ```bash
-    ng serve
-
 ## Project Structure
 
 - **src/app/components**: Contains the main components of the app such as the product list, product detail, cart, and order confirmation pages.
@@ -41,6 +28,25 @@ After installation, run the development server using the **Angular CLI**:
 ## Responsive Design
 
 The project is designed to be responsive, ensuring compatibility across different device sizes.
+## Setup and Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/AbdallahAhmed0/Examination-Management-System.git
+   
+2. **Install dependencies:**
+   ```bash
+   npm install
+
+3. **Run the application:**
+   ```bash
+   ng serve
+ 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
+The application will run on http://localhost:4200/.
+
+
+ ## ScreenShots
 
 
 ![ScreenShot](screenshots/ProductList.PNG)
