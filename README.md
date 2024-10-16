@@ -15,15 +15,15 @@ This is a simple e-commerce application built using **Angular**. Users can brows
 ## Install dependencies:
 Make sure you have **Node.js** and **npm** installed. Then, run:
 
- ```bash
-npm install
+    ```bash
+    npm install
 
 ## Run the application
 
 After installation, run the development server using the **Angular CLI**:
 
-```bash
-ng serve
+    ```bash
+    ng serve
 
 ## Project Structure
 
