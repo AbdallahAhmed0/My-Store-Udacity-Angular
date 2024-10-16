@@ -6,8 +6,8 @@
             <h3>{{product.name}}</h3>
             <h5>{{product.price|currency}}</h5>
             <p>{{product.description}}</p>
-        <input class="select-input" #inpMount type="number" name="numofcat" min="1" [defaultValue]="1">
-        <button type="button" (click)="addToCart(product,inpMount.value)" class="btn btn-primary">Add to cart</button>
+        <input class="form-control mt-2" #inpMount type="number" name="numofcat" min="1" [defaultValue]="1">
+        <button type="button" (click)="addToCart(product,inpMount.value)" >Add to cart</button>
         <a class="mt-4" [routerLink]="['/products']" >Back to Products</a>
     </div>
 </div>
