@@ -1,4 +1,4 @@
-<div class="cart" *ngIf="products">
+<div class="cart" *ngIf="products.length">
     <div class="cart__item">
         <div class="cart-item" *ngFor="let prd of products">
             <img [src]="prd.url" alt="">
@@ -17,6 +17,6 @@
     </div>
 </div>
 
-<div class="empty-page m-auto alert alert-warning" *ngIf="!products.length">
+<div class="empty-page alert alert-warning" *ngIf="!products.length">
     <h1 class="mt-5">Cart is Empty</h1>
 </div>
