@@ -1,36 +1,50 @@
+.detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7%;
+}
+
+.detail-item {
+  
+  display: inline-block; 
+  justify-content: center;
+  align-items: center;
+  
+}
 img {
-    border-radius: 10px;
-    width: 220px;
-    margin-right: 130px;
-    
+  border-radius: 10px;
+  width: 14%;
+  margin-right: 10%;
   }
-  
-  .select-input {
-    display: block;
-    width: 108px; 
-    margin-bottom: 15px;
-    margin-top: 15px;
+  input[type="number"] {
+    margin: 10px 0;
+    width: 60%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
   }
+  input[type="number"]:focus {
+    outline: none; 
+    border: 2px solid #007bff; 
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
   
-  .detail-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 64px;
-  }
-  
-  .detail-item {
-    
-    display: inline-block; 
-    justify-content: center;
-    align-items: center;
-    
- }
-  
-  .back-link {
-    margin-top: 8px;
-  }
-  button,a{
+  button{
     display: block;
     margin-top: 15px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
   }
