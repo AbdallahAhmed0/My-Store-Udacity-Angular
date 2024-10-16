@@ -1,32 +1,47 @@
-# AppStore
+# My Store Udacity Angular Project
+
+## Overview
+
+This is a simple e-commerce application built using **Angular**. Users can browse through products, view details, add items to their shopping cart, and complete their purchase. The application demonstrates the use of Angular components, services, and routing to create a dynamic and responsive web application.
+
+## Features
+
+- Product listing page
+- Product detail page
+- Shopping cart
+- Order confirmation page
+- Responsive design
+
+## Install dependencies:
+Make sure you have **Node.js** and **npm** installed. Then, run:
+
+``bash
+npm install
+## Run the application
+
+After installation, run the development server using the **Angular CLI**:
+
+``bash
+ng serve
+
+## Project Structure
+
+- **src/app/components**: Contains the main components of the app such as the product list, product detail, cart, and order confirmation pages.
+- **src/app/services**: Holds services that handle state and logic such as the cart service.
+- **src/app/models**: Includes TypeScript interfaces used throughout the application.
+
+## Usage
+
+- Browse through the available products.
+- View product details by clicking on a product.
+- Add products to the shopping cart and adjust quantities.
+- Complete the purchase and view an order confirmation.
+
+## Responsive Design
+
+The project is designed to be responsive, ensuring compatibility across different device sizes.
+
 
 ![ScreenShot](screenshots/ProductList.PNG)
-![ScreenShot](screenshots/productDetailes.PNG)
 ![ScreenShot](screenshots/Cart.PNG)
-
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.2.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![ScreenShot](screenshots/Success.PNG)
