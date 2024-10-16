@@ -39,6 +39,10 @@ get isEmptyCart(){
   }
   return this.totalPrice;
 }
+updateCart(products: Products[]) {
+  // Logic to update the cart in localStorage or wherever you store the cart data
+  localStorage.setItem('cart', JSON.stringify(products));
+}
 
   
 }
