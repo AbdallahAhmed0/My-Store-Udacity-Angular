@@ -32,8 +32,7 @@ The project is designed to be responsive, ensuring compatibility across differen
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/AbdallahAhmed0/Examination-Management-System.git
-   
+   https://github.com/AbdallahAhmed0/My-Store-Udacity-Angular.git   
 2. **Install dependencies:**
    ```bash
    npm install
