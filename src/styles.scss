@@ -1,13 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { 
+  height: 100%; 
+  scroll-behavior: smooth; /* Smooth scrolling */
+
+}
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 body {
   margin: 0;
   font-family: sans-serif;
 }
-h1 {
-  text-align: center;
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a75ff;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0057c9;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track background */
 }
