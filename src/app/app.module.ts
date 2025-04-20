@@ -17,6 +17,7 @@ import { ProductItemDetailComponent } from './Componants/product-item-detail/pro
 import { ProductItemComponent } from './Componants/product-item/product-item.component';
 import { ProductListComponent } from './Componants/product-list/product-list.component';
 import { UserInfoComponent } from './Componants/user-info/user-info.component';
+import { LoadingComponent } from './Componants/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UserInfoComponent } from './Componants/user-info/user-info.component';
     ProductItemDetailComponent,
     ProductItemComponent,
     ProductListComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    LoadingComponent
     
   ],
   

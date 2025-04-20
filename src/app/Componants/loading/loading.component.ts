@@ -1,0 +1,17 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-loading',
+  templateUrl: './loading.component.html',
+  styleUrls: ['./loading.component.scss']
+})
+export class LoadingComponent implements OnInit {
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    setTimeout(() => {
+      this.router.navigate(['/products']);
+    }, 2500); // 2.5 seconds
+  }
+}
