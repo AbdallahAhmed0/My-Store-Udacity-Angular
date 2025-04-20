@@ -4,9 +4,10 @@
       <a class="navbar-brand" href="#">My Store</a>
     </div>
     <div>
-      <a class="nav-link" [routerLink]="['/cart']"  title="Cart"> 
-        <i class='fa fa-shopping-cart' aria-hidden="true" style="font-size: 25px;"></i>
+      <a class="nav-link cart-link" [routerLink]="['/cart']" title="Cart">
+        <i class="fa fa-shopping-cart" aria-hidden="true" style="font-size: 25px;"></i>
+        <span class="cart-badge" *ngIf="cartCount > 0">{{ cartCount }}</span>
       </a>
-    </div>
+          </div>
   </div>
 </nav>
