@@ -8,17 +8,17 @@ import { CartService } from 'src/app/Services/cart.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  isEmptycart:boolean =false;
+  cartCount!: number;
+  totalPrice!: number;
+  constructor(private cartService: CartService) {}
 
-  constructor(private cartSer:CartService
-              ) { }
-
-  ngOnInit(): void {
-
-  this.cartSer.isEmptyCart.subscribe(status => {
-    this.isEmptycart=status;
-  })
+  ngOnInit() {
+    this.cartService.cartItems$.subscribe(items => {
+      console.log(items);
+      this.cartCount = items.length;
+      this.totalPrice = this.cartService.getTotalPrice();
+    });
+  }
+  }
   
-}
-  
-}
+

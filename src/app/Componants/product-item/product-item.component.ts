@@ -10,7 +10,6 @@ import * as bootstrap from 'bootstrap'; // Import Bootstrap
   styleUrls: ['./product-item.component.scss']
 })
 export class ProductItemComponent implements OnInit {
-quantity:number = 1;  
 @Input() prd!: Products;
   constructor(private router:Router,
               private cartSer:CartService) { 
@@ -27,8 +26,7 @@ this.router.navigate([`/product/${id}`]);
 }
 
 addToCart(prd:Products,count:string){
-  prd.amount=count;
-  this.quantity = +count;
+  prd.amount = count;
   this.cartSer.addToCart(prd,+count);
       // Show the success modal
       const modalElement = document.getElementById('successModal') as HTMLElement;

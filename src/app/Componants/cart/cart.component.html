@@ -6,7 +6,7 @@
                 <h5 class="cart-detail">{{prd.name}}</h5>
                 <h5 class="cart-detail">{{prd.price | currency}}</h5>
                 <label for="amount">Amount</label>
-                <input id="amount" #inpMount class="number-input form-control" (change)="price(inpMount.value)" type="number" min="1" value="{{prd.amount}}">
+                <input id="amount" #inpMount class="number-input form-control" (change)="quantityChanged(inpMount.value)" type="number" min="1" [value]="prd.amount">
                 <button class="btn btn-outline-danger delete-btn" (click)="deleteProduct(prd)">
                     <i class="fa fa-trash" aria-hidden="true"></i>
                 </button>

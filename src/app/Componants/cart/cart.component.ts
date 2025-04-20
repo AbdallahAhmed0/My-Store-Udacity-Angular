@@ -16,14 +16,14 @@ export class CartComponent implements OnInit {
 
   constructor(private cartSer: CartService,
               private router: Router) { 
-    this.totalPrice = this.cartSer.totalPriceOfCart();
+    this.totalPrice = this.cartSer.getTotalPrice();
   }
 
   ngOnInit(): void {
     this.products = this.cartSer.getItems();
   }
 
-  price(count: string) {
+  quantityChanged(count: string) {
     this.totalPrice = 0;
     for (let prd of this.products) {
       this.totalPrice += prd.price * +count;
@@ -33,8 +33,8 @@ export class CartComponent implements OnInit {
   // Method to remove product from the cart
   deleteProduct(product: Products) {
     this.products = this.products.filter(p => p !== product);  // Remove product from array
-    this.totalPrice = this.products.reduce((total, prd) => total + prd.price * +prd.amount, 0);  // Recalculate total price
-    this.cartSer.updateCart(this.products);  // Update cart in service
+    this.totalPrice = this.cartSer.getTotalPrice();
+    this.cartSer.removeFromCart(product.id);  // Update cart in service
   }
 
   onSubmit(value: any) {

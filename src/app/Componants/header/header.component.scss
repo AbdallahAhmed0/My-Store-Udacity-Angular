@@ -1,6 +1,12 @@
 
 .navbar {
-  padding: 1rem; 
+  padding: 1rem;
+  margin-bottom: 2rem; 
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+
 }
 
 .navbar-brand {

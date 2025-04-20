@@ -1,48 +1,75 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, map } from 'rxjs';
+import { CartItem } from 'src/app/Models/cart-item';
 import { Products } from 'src/app/Models/products';
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CartService {
+  private cartItemsSubject = new BehaviorSubject<CartItem[]>(this.loadCartFromLocalStorage());
+  cartItems$ = this.cartItemsSubject.asObservable();
 
-  isEmpty=new BehaviorSubject<boolean>(false);
-  constructor(
-    private http: HttpClient
-  ){}
+  constructor() {
+    // Save any change to localStorage
+    this.cartItems$.subscribe(items => {
+      this.saveCartToLocalStorage(items);
+    });
+  }
 
-  prd:Products[]=[];
-  countOfPrd:number[]=[];
-  totalPrice:number=0;
+  /** Add product to cart, or update quantity if it already exists */
+  addToCart(product: Products, quantity: number ) {
+    const items = this.cartItemsSubject.value;
+    const existingIndex = items.findIndex(item => item.product?.id === product.id);
+
+    if (existingIndex >= 0) {
+      items[existingIndex].quantity += quantity;
+    } else {
+      items.push({ product, quantity });
+    }
+
+    this.cartItemsSubject.next([...items]);
+  }
+
+  /** Remove item by product ID */
+  removeFromCart(productId: number) {
+    const updatedItems = this.cartItemsSubject.value.filter(item => item.product?.id !== productId);
+    this.cartItemsSubject.next(updatedItems);
+  }
+
+  /** Clear all cart */
+  clearCart() {
+    this.cartItemsSubject.next([]);
+  }
+
+  /** Total price calculation */
+  getTotalPrice(): number {
+    return this.cartItemsSubject.value.reduce((total, item) => {
+      return total + item.product?.price * item.quantity;
+    }, 0);
+  }
+  getItems(): Products[] {
+    return this.cartItemsSubject.value.map(item => item.product);
+  }
   
-  addToCart(product:Products,count:number) {
-    this.prd.push(product);
-    this.countOfPrd.push(count);
-    this.isEmpty.next(true);
-  }
-
-  getItems() {
-    return this.prd;
-  }
-get isEmptyCart(){
-  return this.isEmpty.asObservable();
-  }
-
-  totalPriceOfCart():number{
-    this.totalPrice=0;
-    let i=0;
-  for(let prd of this.prd){
-     this.totalPrice += prd.price * this.countOfPrd[i];
-    i++;
-  }
-  return this.totalPrice;
-}
-updateCart(products: Products[]) {
-  // Logic to update the cart in localStorage or wherever you store the cart data
-  localStorage.setItem('cart', JSON.stringify(products));
-}
-
   
+  /** Count of all items */
+  getTotalQuantity(): number {
+    return this.cartItemsSubject.value.reduce((sum, item) => sum + item.quantity, 0);
+  }
+
+  /** Observable: is cart empty */
+  isEmptyCart() {
+    return this.cartItems$.pipe(map(items => items.length === 0));
+  }
+
+  // 🔐 LocalStorage Integration
+  private saveCartToLocalStorage(cart: CartItem[]) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
+  private loadCartFromLocalStorage(): CartItem[] {
+    const stored = localStorage.getItem('cart');
+    return stored ? JSON.parse(stored) : [];
+  }
 }
