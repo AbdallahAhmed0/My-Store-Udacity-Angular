@@ -1,5 +1,5 @@
 
-<div class="cart-item col-3" >
+<div class="cart-item col-9" >
     <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
     <div class="form-margin" >
         <div class="mb-3">
@@ -18,15 +18,15 @@
             <input type="text" class="form-control" formControlName="address"  aria-describedby="helpId" required min="6" placeholder="minimum 6 characters">
     
             <div *ngIf="address?.touched && address?.invalid">  
-                <small *ngIf="address?.errors?.['required']"  class="text text-danger">Address is required </small>
-                <small *ngIf="address?.errors?.['minlength']"  class="text text-danger">Address should be at least 6 charcaters</small>
+                <small *ngIf="address?.errors?.['required']"  class="text text-danger ">Address is required </small>
+                <small *ngIf="address?.errors?.['minlength']"  class="text text-danger ">Address should be at least 6 charcaters</small>
               </div>
               
         </div>
 
           <div class="mb-3">
-            <label for="" class="form-label">Credit Cart</label>
-            <input type="text" class="form-control" formControlName="creditCard" min="16"  aria-describedby="helpId" required placeholder=" 16 digits number">
+            <label for="" class="form-label">Credit Card</label>
+            <input type="text" class="form-control" formControlName="creditCard" minlength="16" maxlength="16" aria-describedby="helpId" required placeholder=" 16 digits number">
 
             <div *ngIf="creditCard?.touched && creditCard?.invalid">  
                 <small *ngIf="creditCard?.errors?.['required']"  class="text text-danger">Card is required </small>

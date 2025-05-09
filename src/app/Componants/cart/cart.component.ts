@@ -40,4 +40,8 @@ export class CartComponent implements OnInit {
   onSubmit(value: any) {
     this.router.navigate([`success/${value.name}/${this.totalPrice}`]);
   }
+  goToShop() {
+    this.router.navigate(['/products']); // Adjust the path to match your product page route
+}
+
 }

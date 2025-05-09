@@ -21,5 +21,10 @@
 </div>
 
 <div class="empty-page alert alert-warning" *ngIf="!products.length">
+    <div class="cart-icon-container">
+        <i class="fa fa-shopping-cart cart-icon"></i> <!-- Add the cart icon here -->
+    </div>
     <h1 class="mt-5">Cart is Empty</h1>
+    <p>Your cart is currently empty. Add some products to it!</p>
+    <button class="shop-now-btn" (click)="goToShop()">Shop Now</button> <!-- Shop Now button -->
 </div>

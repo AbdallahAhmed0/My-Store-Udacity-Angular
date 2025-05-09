@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CartService } from '../../Services/cart.service';
 
 @Component({
   selector: 'app-user-info',
@@ -13,7 +14,7 @@ export class UserInfoComponent implements OnInit {
   submitted = false;
   @Output() userInfo = new EventEmitter();
 
-  constructor() { 
+  constructor(private cartService:CartService) { 
 
   }
   
@@ -27,6 +28,7 @@ export class UserInfoComponent implements OnInit {
 
   }
   onSubmit() {
+    this.cartService.clearCart();
     this.userInfo.emit(this.myForm.value);
     
   }
